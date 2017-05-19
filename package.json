@@ -1,0 +1,27 @@
+{
+  "name": "mind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwokhung/mind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwokhung/mind/issues"
+  },
+  "homepage": "https://github.com/kwokhung/mind#readme",
+  "devDependencies": {
+    "@types/mqtt": "0.0.34",
+    "@types/node": "^7.0.18"
+  },
+  "dependencies": {
+    "mqtt": "^2.7.2"
+  }
+}
