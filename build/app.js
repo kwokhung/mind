@@ -26,13 +26,13 @@ client.on("connect", function (connack) {
         //console.log(JSON.stringify(err));
         //console.log(JSON.stringify(granted));
         if ((typeof err === "undefined" || err === null) && granted.some(function (value) { return value.topic === "mind/#" && value.qos !== 128; })) {
-            var data = {
+            var iAm = {
                 who: "mind",
                 whoAmI: "mind",
                 when: new Date().yyyyMMddHHmmss()
             };
-            console.log("toEight/i.am" + " => " + JSON.stringify(data));
-            client.publish("toEight/i.am", JSON.stringify(data), function (err) {
+            console.log("toEight/i.am" + " => " + JSON.stringify(iAm));
+            client.publish("toEight/i.am", JSON.stringify(iAm), function (err) {
                 //console.log("publish");
                 //console.log(JSON.stringify(err));
             });
