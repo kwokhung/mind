@@ -38,9 +38,9 @@ client.on("connect", (connack) => {
                 when: new Date().yyyyMMddHHmmss()
             };
 
-            console.log("toEight/i.am" + " => " + JSON.stringify(iAm));
+            console.log("toEight/iAm" + " => " + JSON.stringify(iAm));
 
-            client.publish("toEight/i.am", JSON.stringify(iAm), (err) => {
+            client.publish("toEight/iAm", JSON.stringify(iAm), (err) => {
                 //console.log("publish");
                 //console.log(JSON.stringify(err));
             });
