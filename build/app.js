@@ -31,11 +31,22 @@ client.on("connect", function (connack) {
                 whoAmI: "mind",
                 when: new Date().yyyyMMddHHmmss()
             };
-            console.log("toEight/i.am" + " => " + JSON.stringify(iAm));
-            client.publish("toEight/i.am", JSON.stringify(iAm), function (err) {
+            console.log("toEight/iAm" + " => " + JSON.stringify(iAm));
+            client.publish("toEight/iAm", JSON.stringify(iAm), function (err) {
                 //console.log("publish");
                 //console.log(JSON.stringify(err));
             });
         }
     });
+    setInterval(function () {
+        var heartbeat = {
+            who: "mind",
+            when: new Date().yyyyMMddHHmmss()
+        };
+        console.log("toEight/heartbeat" + " => " + JSON.stringify(heartbeat));
+        client.publish("toEight/heartbeat", JSON.stringify(heartbeat), function (err) {
+            //console.log("publish");
+            //console.log(JSON.stringify(err));
+        });
+    }, 1000);
 });

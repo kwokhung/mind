@@ -46,4 +46,18 @@ client.on("connect", (connack) => {
             });
         }
     });
+
+    setInterval(() => {
+        let heartbeat: Eight.Inbound.HeartbeatParameter = {
+            who: "mind",
+            when: new Date().yyyyMMddHHmmss()
+        };
+
+        console.log("toEight/heartbeat" + " => " + JSON.stringify(heartbeat));
+
+        client.publish("toEight/heartbeat", JSON.stringify(heartbeat), (err) => {
+            //console.log("publish");
+            //console.log(JSON.stringify(err));
+        });
+    }, 1000);
 })
